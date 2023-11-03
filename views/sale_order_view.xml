@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+
+    <data>
+        <record id="sale_order_inherit_status_prepensa_tree" model="ir.ui.view">
+            <field name="name">status.prepensa.view.tree.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="status_prepensa" widget="badge" decoration-info="status_prepensa == 'pending'" decoration-warning="status_prepensa == 'process'" decoration-success="status_prepensa == 'send'"/>
+                    <field name="status_pay" widget="badge" decoration-danger="status_pay == 'no_paid'" decoration-warning= "status_pay == 'advance_payment'" decoration-success="status_pay == 'paid'" decoration-info="status_pay == 'cancell'" />
+                </xpath>
+            </field>
+        </record>
+    
+        <record id="sale_order_inherit_status_prepensa" model="ir.ui.view">
+            <field name="name">status.prepensa.view.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="status_prepensa" />
+                    <field name="status_pay" />
+                </xpath>
+
+                <xpath expr="//field[@name='partner_id']" position="before">
+                    <field name="status_partner" widget="badge" decoration-info="status_partner == 'undefined'" decoration-success="status_partner == 'trust'" decoration-warning="status_partner == 'deberon'" decoration-danger="status_partner == 'ignore'" />
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_template_id']" position="attributes">
+                    <attribute name="options" >{'no_create': True, 'no_edit': True}</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']" position="attributes">
+                    <attribute name="options" >{'no_create': True, 'no_edit': True}</attribute>
+                </xpath>
+
+            </field>
+        </record>
+    
+    </data>
+    
+
+</flectra>

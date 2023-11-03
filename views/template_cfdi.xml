@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+    
+        <template id="checkout_portal" inherit_id="website_sale.address">
+            <xpath expr="//form/div" position="inside">
+                <div t-attf-class="form-group #{error.get('regimen_fiscal') and 'has-error' or ''} col-md-6 div_regimen_fiscal">
+                    <label class="control-label" for="regimen_fiscal">Régimen Fiscal</label>
+                    <select id="regimen_fiscal" name="regimen_fiscal" class="form-control">
+                        <option value='601' t-att-selected="request.params.get('regimen_fiscal', '') == '601'">General de Ley Personas Morales</option>
+                        <option value='603' t-att-selected="request.params.get('regimen_fiscal', '') == '603'">Personas Morales con Fines no Lucrativos</option>
+                        <option value='605' t-att-selected="request.params.get('regimen_fiscal', '') == '605'">Sueldos y Salarios e Ingresos Asimilados a Salarios</option>
+                        <option value='606' t-att-selected="request.params.get('regimen_fiscal', '') == '606'">Arrendamiento</option>
+                        <option value='608' t-att-selected="request.params.get('regimen_fiscal', '') == '608'">Demás ingresos</option>
+                        <option value='609' t-att-selected="request.params.get('regimen_fiscal', '') == '609'">Consolidación</option>
+                        <option value='610' t-att-selected="request.params.get('regimen_fiscal', '') == '610'">Residentes en el Extranjero sin Establecimiento Permanente en México</option>
+                        <option value='611' t-att-selected="request.params.get('regimen_fiscal', '') == '611'">Ingresos por Dividendos (socios y accionistas)</option>
+                        <option value='612' t-att-selected="request.params.get('regimen_fiscal', '') == '612'">Personas Físicas con Actividades Empresariales y Profesionales</option>
+                        <option value='614' t-att-selected="request.params.get('regimen_fiscal', '') == '614'">Ingresos por intereses</option>
+                        <option value='616' t-att-selected="request.params.get('regimen_fiscal', '') == '616'">Sin obligaciones fiscales</option>
+                        <option value='620' t-att-selected="request.params.get('regimen_fiscal', '') == '620'">Sociedades Cooperativas de Producción que optan por diferir sus ingresos</option>
+                        <option value='621' t-att-selected="request.params.get('regimen_fiscal', '') == '621'">Incorporación Fiscal</option>
+                        <option value='622' t-att-selected="request.params.get('regimen_fiscal', '') == '622'">Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras</option>
+                        <option value='623' t-att-selected="request.params.get('regimen_fiscal', '') == '623'">Opcional para Grupos de Sociedades</option>
+                        <option value='624' t-att-selected="request.params.get('regimen_fiscal', '') == '624'">Coordinados</option>
+                        <option value='628' t-att-selected="request.params.get('regimen_fiscal', '') == '628'">Hidrocarburos</option>
+                        <option value='607' t-att-selected="request.params.get('regimen_fiscal', '') == '607'">Régimen de Enajenación o Adquisición de Bienes</option>
+                        <option value='629' t-att-selected="request.params.get('regimen_fiscal', '') == '629'">De los Regímenes Fiscales Preferentes y de las Empresas Multinacionales</option>
+                        <option value='630' t-att-selected="request.params.get('regimen_fiscal', '') == '630'">Enajenación de acciones en bolsa de valores</option>
+                        <option value='615' t-att-selected="request.params.get('regimen_fiscal', '') == '615'">Régimen de los ingresos por obtención de premios</option>
+                        <option value='625' t-att-selected="request.params.get('regimen_fiscal', '') == '625'">Régimen de las Actividades Empresariales con ingresos a través de Plataformas Tecnológicas</option>
+                        <option value='626' t-att-selected="request.params.get('regimen_fiscal', '') == '626'">Régimen Simplificado de Confianza</option>
+                    </select>
+                </div>
+            </xpath>
+        </template>
+    
+    </data>
+</flectra>
